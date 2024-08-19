@@ -11,8 +11,6 @@ const List = () => {
 
   return (
     <div>
-      <h2>Anecdotes</h2>
-
       {anecdotes
         .slice()
         .sort((a, b) => b.votes - a.votes)
@@ -21,7 +19,7 @@ const List = () => {
             <div>{anecdote.content}</div>
 
             <div>
-              has {anecdote.votes}
+              has {anecdote.votes} {""}
               <button onClick={() => votes(anecdote.id)}>vote</button>
             </div>
           </div>

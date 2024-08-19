@@ -31,8 +31,6 @@ const reducerSlice = createSlice({
       return state
     },
     newAnecdote(state, action) {
-      console.log(action)
-
       state.push({
         content: action.payload,
         id: getId(),
