@@ -14,7 +14,11 @@ const Notification = () => {
 
   return (
     <div>
-      <div style={styleAnecdote}>you voted {anecdote[0].content}</div>
+      {anecdote.length > 0 ? (
+        <div style={styleAnecdote}>you voted {anecdote[0].content}</div>
+      ) : (
+        ""
+      )}
 
       <div>
         {notification ? (
