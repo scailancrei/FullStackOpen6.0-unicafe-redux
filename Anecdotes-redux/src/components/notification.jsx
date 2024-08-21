@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 const Notification = () => {
   const anecdoteMostVoted = useSelector((state) => state.anecdotes)
-  const notification = useSelector((state) => state.notifications.value)
+  const notification = useSelector((state) => state.notifications)
 
   const anecdote = [...anecdoteMostVoted].sort((a, b) => b.votes - a.votes)
   const lastAnecdote = [...anecdoteMostVoted].pop()
@@ -21,9 +21,9 @@ const Notification = () => {
       )}
 
       <div>
-        {notification ? (
+        {notification.value ? (
           <div style={{ border: "solid 3px green", borderRadius: "10px" }}>
-            New anecdote created: {lastAnecdote.content}
+            {notification.text} {lastAnecdote.content}
           </div>
         ) : (
           ""
