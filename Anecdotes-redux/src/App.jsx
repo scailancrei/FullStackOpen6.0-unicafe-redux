@@ -3,13 +3,12 @@ import { useDispatch } from "react-redux"
 import Form from "./components/form.jsx"
 import List from "./components/list.jsx"
 import Notification from "./components/notification.jsx"
-import services from "./services/services.jsx"
-import { setAnecdote } from "./reducers/anecdoteSlice.js"
+import { initAnecdotes } from "./reducers/anecdoteSlice.js"
 
 const App = () => {
   const dispatch = useDispatch()
   useEffect(() => {
-    services.getAll().then((anecdotes) => dispatch(setAnecdote(anecdotes)))
+    dispatch(initAnecdotes())
   }, [])
 
   return (
